@@ -89,6 +89,8 @@ def getReceipts():
                 receipts.append(receiptAsFloat)
             except:
                 print("Are you sure you typed '", receipt, "' correctly?")
+                print("Hit enter to try again")
+                input()
         else:
             clear()
             showSummary()
