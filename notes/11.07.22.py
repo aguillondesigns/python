@@ -4,10 +4,14 @@ num2 = 99.3524816
 print(round(num1, 0))
 print(round(num2, 2))
 
-#Try/catch
+# Try/catch
 number = "float"
 try:
     asNumber = int(number)
     print(asNumber)
 except:
-    print("unable to convert " + number + " to an integer")
+    print("unable to convert '" + number + "' to an integer")
+
+# Blows up the code without the try catch
+asNumber = int(number)
+print(asNumber)
