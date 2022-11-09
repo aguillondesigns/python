@@ -17,3 +17,13 @@ Which property would you like to change?
 
 Loop until user is happy
 '''
+
+'''
+Git commands to save files
+1. Make sure you are in the root python folder
+2. git status - tell us about any changes in our directory
+3. git add [file] - add file to our list of items to be committed
+4. git status - should show all our changes in green
+5. git commit -m "message for commit"
+6. git push - sends the data to the remote repository
+'''
