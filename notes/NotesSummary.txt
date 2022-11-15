@@ -1,0 +1,23 @@
+10/10/22
+    Data types - integer, float, string
+    Using Print statment
+    Data conversions (casting) int, float, str, bool
+10/11/22
+    Accessing parts of strings
+    Lists, Tuples, Dictionaries
+    For and While loop
+10/17/22
+    Built in functions like: absolute value, ceil, floor, compare, max, min
+    Creating a function
+10/18/22
+    Did a Login example
+10/24/22
+    Booleans (true/false), modulus
+    if statments
+    Magic 8 ball app (random message)
+    Powerball app
+10/25/22
+    Grocery list app
+11/07/22
+    Rounding
+    Try catch
