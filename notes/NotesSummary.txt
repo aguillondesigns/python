@@ -21,3 +21,15 @@
 11/07/22
     Rounding
     Try catch
+11/14/22
+    Went over property change assignment
+11/15/22
+    Objects/Classes
+    File read/write
+    Assignment - Use a loop to write more than one number to a user
+    selected text file
+???
+    Databases
+    Api Calls
+    examing scripts
+    Handling file paths correctly, escaping characters
