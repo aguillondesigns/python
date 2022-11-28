@@ -21,6 +21,8 @@
 11/07/22
     Rounding
     Try catch
+11/08/22
+    Got everyone setup in github
 11/14/22
     Went over property change assignment
 11/15/22
@@ -28,8 +30,10 @@
     File read/write
     Assignment - Use a loop to write more than one number to a user
     selected text file
+11/21-22 
+    Vacation
 ???
     Databases
     Api Calls
-    examing scripts
+    examining scripts
     Handling file paths correctly, escaping characters
