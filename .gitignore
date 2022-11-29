@@ -1,5 +1,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 
-# Test file
+# Test files
 test*.*
+
+# students example file
+examples.py

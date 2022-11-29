@@ -4,6 +4,7 @@
 # 4. Add extras if you like!
 
 # library imports
+from random import choice
 import functions as fun # Here I am importing my own library file
 
 # Setup our clear
@@ -21,10 +22,10 @@ def getFilename():
         getFilename()
 
 # Uses a loop to created a 'x' line separator
-def getLoopedContent(message):
+def getLoopedContent(message, outputChar = '0'):
     output = ''
     for char in message:
-        output += '0'
+        output += outputChar
     output += '\n' # add a new line character to the end
     return output
 
@@ -37,7 +38,7 @@ def saveMessage(filename):
         message = input("New file eh? What would you like to add?" + '\n')
         openMethod = 'w'
     f = open(filename, openMethod)
-    loopedContent = getLoopedContent(message)
+    loopedContent = getLoopedContent(message, choice(message))
     f.write(loopedContent)
     f.write(message + '\n')
     f.close()
@@ -50,16 +51,6 @@ def start():
         quit("Returning you to your regular scheduled programming")
     saveMessage(filename) # Get and save the message to the file
     fun.printFileContents(filename)
-    
-    
-
-
-    
-
-    
-
-
-
 
 # Run the program
 start()
