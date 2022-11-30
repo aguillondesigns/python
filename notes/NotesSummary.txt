@@ -32,7 +32,22 @@
     selected text file
 11/21-22 
     Vacation
+11/28/22
+    Review file assignment
+    Discuss importing personal library, calling personal libraries
+    gitignore
+11/29/22
+    string.strip() cleans up empty spaces and new lines
+    string.split() separates data by a given string 
+    read in a csv file, converted to object, saved to a new file
+    Assignment - 
+        Add up each bill separately (like running total)
+        Create a new script that will add 25 random rows to test.csv 
+        fileProcessing.py
 ???
+    string.split()
+    string.strip()
+    run a python script from a python script
     Databases
     Api Calls
     examining scripts
