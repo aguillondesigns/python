@@ -73,5 +73,4 @@ x 4. Display total users processed and total bills calculated
 '''
 # ways to evade column headers from popping the code
 # change the seek?
-# 
-
+#

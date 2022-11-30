@@ -44,6 +44,7 @@
         Add up each bill separately (like running total)
         Create a new script that will add 25 random rows to test.csv 
         fileProcessing.py
+        csvGenerator.py
 ???
     string.split()
     string.strip()
