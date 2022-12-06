@@ -45,6 +45,14 @@
         Create a new script that will add 25 random rows to test.csv 
         fileProcessing.py
         csvGenerator.py
+12/5/22
+    Discussed assignment
+    Talked a little bit more about importing other files
+    Talked about locale.currency
+    small class example
+    Homework: 
+        Create class: give descriptive name, 5 properties, create the constructor
+        Bonus: create a few instances of your class and loop through them
 ???
     string.split()
     string.strip()
