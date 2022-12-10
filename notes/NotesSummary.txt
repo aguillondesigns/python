@@ -53,6 +53,13 @@
     Homework: 
         Create class: give descriptive name, 5 properties, create the constructor
         Bonus: create a few instances of your class and loop through them
+12/6/22
+    Went over class Homework
+    Discussed putting another clas as a property of a class
+    Homework:
+        create a class that helps you calculate/estimate something
+        calculate at least 3 different things (example: yard cutting, weed eating, light installation)
+        
 ???
     string.split()
     string.strip()
