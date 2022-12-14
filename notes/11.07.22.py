@@ -11,6 +11,8 @@ try:
     print(asNumber)
 except:
     print("unable to convert '" + number + "' to an integer")
+    asNumber = 0
+    number = 0
 
 # Blows up the code without the try catch
 asNumber = int(number)

@@ -12,8 +12,13 @@ print(ceilValue)
 floorValue = floor(99.99) # floor always goes down
 print(floorValue)
 
-compareValue = cmp(1, 2)
-print(compareValue)
+def compareValue(a, b):
+    return a == b
+
+compareVal = compareValue('one', 'One')
+print(compareVal)
+
+
 
 # other function exp(exponent of), log(logarithm of), log10(logarithm of base 10)
 # max(item1, item2), min(item1, item2), sqrt(square root), round(value, places)
@@ -25,6 +30,7 @@ numbers = {27 : "R", 35 : "Z", 96 : "N", 1 : "A", 13 : "C" }
 # max() sorts by the "key" in the dictionary
 
 print(max(people))
+print(min(people))
 print(max(numbers))
 print(max(100,200,300,400,500))
 print(min(100,200))
@@ -56,5 +62,5 @@ z = multiply(y, x)
 
 print(x,y,z)
 
-#printCube("%%%%%%%%%%")
+printCube("!!!!!!!!!!!!!!!!!!!!!!!!!!")
 

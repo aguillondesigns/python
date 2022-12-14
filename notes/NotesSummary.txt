@@ -55,10 +55,27 @@
         Bonus: create a few instances of your class and loop through them
 12/6/22
     Went over class Homework
-    Discussed putting another clas as a property of a class
+    Discussed putting another class as a property of a Classes
+    Create a LandScapingEstimator
     Homework:
         create a class that helps you calculate/estimate something
         calculate at least 3 different things (example: yard cutting, weed eating, light installation)
+12/12/22
+    Went over class Homework
+12/13/22
+    Went over all previous class notes
+    Homework: Rock, Paper, Scissors
+        Collect Player Names
+        Save Players Score (best of 3/5/7) - win: 2, tie: 1, loss: 0/per round (Score is sum of all won rounds/ player)  
+            Oliva, 3
+            Donald, 2
+        Gotchas: what to do with ties
+        use classes where possible
+        make sure output is clean
+        use loop 
+
+
+    
         
 ???
     string.split()
@@ -68,3 +85,4 @@
     Api Calls
     examining scripts
     Handling file paths correctly, escaping characters
+    date/time

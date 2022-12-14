@@ -25,12 +25,3 @@ print(a,b,c)
 
 d,e,f = 1,2,3
 print(d,e,f,integer,float,string)
-
-
-
-
-
-
-
-
-
