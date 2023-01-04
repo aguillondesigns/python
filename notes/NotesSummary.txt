@@ -78,8 +78,84 @@
     String Interpolation
     None value
     Naming conventions: variable, class, function name scheme
+12/20/2022
+    Made hangman as a class
+    used import getpass to get a hidden word
+    imported art in a separate file
+    learned about not in
+    '''
+    Hangman requirements
+    1. Someone or Computer needs to guess a word (probably best to let a human 
+    type in a phrase to solve)
+    2. Draw blank line for each letter in the word
+        Happy Birthday -> ----- --------
+    3. While loop that allows player to guess until they win or the man is dead
+    4. Display the burned letters
+    5. Fill in correct letters (all instances of the letters)
+    6. Drawing the man
+        a. draw the post
+        b. draw the head
+        c. draw the body (single line)
+        d. draw left arm
+        e. draw right arm
+        f. draw left leg
+        g. draw right leg
+
+                    +---+
+                    |   |
+                    O   |
+                   /∞\  |  ---- -------
+                   / \  |
+                        |
+                        |
+                ========+
+
+              ----- -------
+    7. Allow user to guess word once, counts as a bad letter if they get it wrong
+    '''
+01/02/23
+    Went over hangman
+    Decided on new project 
+        Contact Book Project
+
+        Show total number of contact, maybe show first x amount
+
+        What would you like to do
+        1. Search for contact
+            a. search by first name
+        2. Add new contact
+            a. probably should allow for blank data
+        3. Edit Contact
+            a. what will the edit screen look like, maybe ask them what they want to edit?
+        4. Display Contacts
+            a. shows all contacts
+                
+                1. Leonard Aguillon  (210) 744-2050
+                14114 Wetmore Bend, San Antonio, TX 78247
+                
+                i. allow user to pick a user id to show a specific contact
+        5. Remove contact
+            a. probably should confirm they really want to do this
+            b. how do we decide who to remove
+            
+        Contact
+            id - users unique id to our contact system
+            first name
+            last name
+            address
+            city
+            state
+            zip
+            email
+            phone
+            birthday
+
+        Adding would save the record in some fashion, maybe csv?
 
 
+        leonard,aguillon,14114 wetmore bend,san antonio,tx,78247,elweros@gmail.com,210-744-2060
+        leonard,aguillon,14114 wetmore bend,san antonio,tx,78247,elweros@gmail.com,210-744-2060
+        leonard,aguillon,14114 wetmore bend,san antonio,tx,78247,elweros@gmail.com,210-744-2060
 
     
         
