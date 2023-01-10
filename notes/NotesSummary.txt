@@ -130,7 +130,7 @@
         4. Display Contacts
             a. shows all contacts
                 
-                1. Leonard Aguillon  (210) 744-2050
+                1. Leonard Aguillon  (210) 744-2050 (email@email.com)
                 14114 Wetmore Bend, San Antonio, TX 78247
                 
                 i. allow user to pick a user id to show a specific contact
@@ -156,6 +156,11 @@
         leonard,aguillon,14114 wetmore bend,san antonio,tx,78247,elweros@gmail.com,210-744-2060
         leonard,aguillon,14114 wetmore bend,san antonio,tx,78247,elweros@gmail.com,210-744-2060
         leonard,aguillon,14114 wetmore bend,san antonio,tx,78247,elweros@gmail.com,210-744-2060
+01/09/23
+    Went over contact book program
+    Using "input()" to pause the program output
+    learned about Object.__str__ function - returns the object as a string that you can format
+    Decided to do password storage program for 01/10/23
 
     
         

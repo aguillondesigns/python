@@ -6,3 +6,5 @@ test*.*
 
 # students example file
 examples.py
+
+*.csv
