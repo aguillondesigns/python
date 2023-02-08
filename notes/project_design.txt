@@ -1,0 +1,81 @@
+Requirements of the project 
+    what does code need to have working in order for me to consider this done?
+
+Layout/Design of the project
+    how do i plan on completing the task required?
+
+
+Project: Simple Checklist Application
+
+
+User Story: 
+    As a user, i would like to add a task to my checklist. I would like to be able view
+    all the checklist items that i have not completed. I would also like to view all of my
+    completed checklist items. If i close and reopen the program, I would like my checklist
+    items to still be available.
+
+    When I am ready to complete an item, i would like to be able to pick it from the list, and
+    mark as completed
+
+    After 1 week, i dont want to see old completed checklist items
+
+
+Requirements:
+    1. UI (User Interface)
+        a. User should be able to add/remove/edit** checklist items
+        b. User should be able to mark items as completed
+        c. Exit the program nicely
+        d. User should be able to list all completed checklist items
+        e. User should be able to list all incomplete checklist items
+
+    2. Backend
+        a. Save the data
+        b. Save the date it was completed
+
+Layout/Design:
+    1. Backend
+        a. Create a 'ChecklistItem' class
+            1. id (auto generated, so we know which row to modify)
+            2. created_date (when i added this to the list)
+            3. description (Pay the phone bill)
+            4. status (checked or unchecked) bool
+            5. completed_date
+        b. Need to save, read, update the data as a .csv
+        c. Need to create a filter by status
+        d. Need to be able to filter completed items by date
+
+    2. Frontend (UI)
+        a. Need to create a menu
+            1. Main Menu
+                a. Create/Add a checklist item
+                b. Remove a checklist item
+                c. Edit a checklist item
+                d. View incomplete checklist items
+                e. View completed checklist items
+                f. Change checklist item status
+                g. Exit program
+            2. Menu should always loop, clear screen after every action
+
+
+
+// What my code would start to look like...
+class CheckListItem:
+    id = 0
+
+class CheckList:
+    items: List[ChecklistItem] = []
+
+    def run():
+        while something:
+            do_menu()
+
+checklist = Checklist()
+checklist.run()
+        a. Need to create a menu
+            1. Main menu
+                a. Create/Add a checklist item
+                b. Remove a checklist item
+                c. Change checklist item status
+                d. View Incomplete Items
+                e. View Completed Items
+                f. Exit program
