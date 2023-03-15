@@ -1,4 +1,4 @@
-import os
+import os, json
 from ingredient import Ingredient
 clear = lambda: os.system('cls')
 
@@ -8,30 +8,48 @@ class Recipe:
     servings: int = 0
     ingredients: list[Ingredient] = []
     steps: list[str] = []
-    categories: list[str] = []
-    unformatted_categories: str = None
+    categories = None
     notes: str = None
     recipe_directory = "recipes"
 
-    def __init__(this, name: str, servings: int, ingredients: list[Ingredient], steps: list[str], 
-        categories: str, notes: str):
+    def __init__(this, name: str = None, servings: int = 0, 
+            ingredients: list[Ingredient] = [], steps: list[str] = [], 
+        categories: str = None, notes: str = None):
         this.name = name
         this.servings = servings
         this.ingredients = ingredients
         this.steps = steps
-        this.unformatted_categories = categories
+        this.categories = categories
         this.notes = notes
 
+    # Here we are going to take a recipe name and find the recipe that its
+    # associated with
+    def load(this):
+        recipe_directory = this.create_recipe_directory()
+        # target_file looks like this: "recipes/french_toast.json"
+        target_file = os.path.join(recipe_directory, this.get_filename())
+        # Open, read and close the file when done
+        with open(target_file) as recipe_file:
+            file_contents = recipe_file.read()
+
+        # This loads an object as a json object
+        json_content = json.loads(file_contents)
+
+        # Here we are resetting the properties of this object from the file data
+        this.name = json_content["name"]
+        this.servings = json_content["servings"]
+        ingredients = []
+        for ingredient in json_content["ingredients"]:
+            ing = Ingredient(ingredient["name"], ingredient["quantity"], ingredient["measurement"])
+            ingredients.append(ing)
+        this.ingredients = ingredients
+        this.steps = json_content["steps"]
+        this.categories = json_content["categories"]
+        this.notes = json_content["notes"]
+
     def serialize(this):
-        ingredients = [item.serialize() for item in this.ingredients]
-        return {
-            "name" : this.name,
-            "servings" : this.servings,
-            "ingredients" : ingredients,
-            "steps" : this.steps,
-            "categories" : this.categories,
-            "notes" : this.notes
-        }
+        return json.dumps(this, default=lambda o: o.__dict__, 
+            sort_keys=True, indent=4)
 
     def save(this):
         # Ensures that each data set is the way we want to store it
@@ -39,6 +57,7 @@ class Recipe:
         # Write the file to disk
         this.__write()
 
+    # Converts file name as such: "French Toast -> french_toast.json"
     def get_filename(this):
         return this.name.lower().replace(" ","_") + ".json"
 
@@ -94,7 +113,7 @@ class Recipe:
 
     def __validate_categories(this):
         temp: list[str] = []
-        categories = this.unformatted_categories.split(',')
+        categories = this.categories.split(',')
         for category in categories:
             temp_category = category.strip()
             if temp_category != '':

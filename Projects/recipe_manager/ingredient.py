@@ -1,3 +1,6 @@
+import json
+
+
 class Ingredient:
     name: str = None
     quantity: str = None
@@ -9,8 +12,5 @@ class Ingredient:
         this.measurement = measurement
 
     def serialize(this):
-        return {
-            "name" : this.name,
-            "quantity" : this.quantity,
-            "measurement" : this.measurement
-        }
+        return json.dumps(this, default=lambda o: o.__dict__, 
+            sort_keys=True, indent=4)

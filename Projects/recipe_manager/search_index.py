@@ -1,4 +1,5 @@
 # list of all recipe names, corresponding categories
+from recipe import Recipe
 
 class Index:
     id: int = 0
@@ -48,6 +49,13 @@ class SearchIndex:
     def get_all_recipes(this):
         return this.index
     
+    def get_full_recipe(this, id):
+        recipe_index  = this.get_recipe_by_id(id)
+        recipe_name = recipe_index.recipe_name
+        recipe = Recipe(recipe_name)
+        recipe.load()
+        return recipe
+
     def get_recipe_by_id(this, id):
         for index in this.index:
             if id == str(index.id):

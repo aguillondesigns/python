@@ -52,7 +52,7 @@ class RecipeManager:
 
         # Delete a recipe
         if choice == '2':
-            id = input("Which id would you like to delete? ")
+            id = input("Which recipe id would you like to delete? ")
             # Confirm deletion
             recipe_index = this.search_index.get_recipe_by_id(id)
             confirm = input("Are you sure you want to delete " + 
@@ -76,7 +76,54 @@ class RecipeManager:
 
         # Start making a recipe
         if choice == '3':
-            input("Start Recipe ... press enter to continue")
+            # Grab id that we are making
+            id = input("Which recipe id would you like to make? ")
+
+            this.start_recipe(id)
+
+    def start_recipe(this, id):
+        # Need to get our recipe from file
+        recipe = this.search_index.get_full_recipe(id)
+        # Ask how many people we are feeding
+        servings_wanted = input(f"How many servings of {recipe.name} would you like? ")
+
+        clear()
+            # Title
+        print(f"Making: {recipe.name} for ({servings_wanted} people)")
+        print()
+            # Show notes
+        print(f"Notes: {recipe.notes}")
+        print()
+            # Ingredients - Use stepping tool
+        print(f"Ingredients: (Press enter to move to next ingredient)")
+        print()
+        for ingredient in recipe.ingredients:
+            servings_per_person = this.get_servings_per_person(int(recipe.servings), float(ingredient.quantity))
+            calcualted_quantity = round(servings_per_person * int(servings_wanted),2)
+            print(f"{calcualted_quantity} {ingredient.measurement} of {ingredient.name}")
+            input()
+        
+        print()
+            # Steps - Use stepping tool
+        print(f"Steps: (Press enter to move to next step)")
+        print()
+        for step in recipe.steps:
+            print(step)
+            input()
+
+        print()
+        input("Recipe complete! press enter to return to the main menu")
+
+    def get_servings_per_person(this, servings, quantity):
+        return quantity / servings
+
+    def calculate_quantity(this, servings, measurement):
+        # For now, dirty math
+        # Fix this up later so it can return even number, possibly fractions
+        return servings * measurement
+
+
+
 
     def __handle_menu_response(this):
         choice = input("Type to search or pick an option? ")
