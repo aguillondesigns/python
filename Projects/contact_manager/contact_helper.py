@@ -24,12 +24,14 @@ class ContactHelper:
             this.contacts.append(contact)
             line += 1
 
-    def find_contact(this, file, search):
+    def find_contact(this, file: str, search: str):
         this.contacts = []
         this.__load_contacts(file)
         hasSearch = []
         for contact in this.contacts:
-            if search in contact.first_name:
+            if search.lower() in contact.first_name.lower():
+                hasSearch.append(contact)
+            elif search.lower() in contact.last_name.lower():
                 hasSearch.append(contact)
         return hasSearch
 

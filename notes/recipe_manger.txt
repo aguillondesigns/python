@@ -1,0 +1,86 @@
+Requirements of the project
+    What does code need to have working in order for me to consider this done?
+
+Layout/Design of the project
+    How do i plan on completing the task required?
+
+Project: Recipe Managemet
+
+User Story: 
+     As a user, I would like to be able to keep track of all of my recipes.
+
+     I would like to be able to add new recipes and update old ones. 
+     I would like to be able to search for the recipe i want by name, possibly
+     by category. 
+     I would like to keep track of a few things like: name, ingredients, steps, number servings
+     and recipe feedback.
+     I would like to be able to increase or decrease the recipe by the amount of people.
+
+        [x] Step 1. Combine dry ingredients in a bowl
+        [ ] Step 2. Beat eggs until fluffy
+
+     Bonus: I would like to keep track of my current steps while doing the recipe.
+     In the future, i would like to be able to add pictures or video for the recipe.
+
+Requirements:
+    1. Frontend (UI) User Interface - 
+        a. Menu
+            1. Need to be able to add a new recipe with the following:
+                a. recipe name, ingredients, steps, servings, categories, feedback
+            2. Need to be able edit/update an existing recipe
+            3. Be able to see all recipes
+            4. Be able to delete a recipe
+            5. Be able to search for a recipe by name or category
+            6. Make this recipe item that lets us scale the recipe up/down
+        c. When adding ingredients or steps, i would like to see all previous items as well
+
+    2. Backend
+        a. See a save notice when after adding a recipe
+        b. Save the data
+        c. Make sure the data is loaded when the program start
+
+Layout/Design
+    1. Frontend
+        a. Need to create a menu, should stay in a loop
+            1. Add New Recipe
+            2. Modify Existing Recipe
+            3. Delete a Recipe
+            4. List all recipes
+            5. Start making a recipe
+            6. Exit program
+            Pick an option or search your recipes:
+
+            
+                Show search results
+                Give option to Start making recipe or enter to return to main menu
+
+    2. Backend
+        a. Need a Recipe Class
+            1. name - string
+            2. ingredients - Ingredient Class
+            3. steps - dictionary { 1 : "Mix dry ingredients", 2 : "beat eggs until fluffy" }
+            4. servings - int
+            5. categories - list ['chinese', 'rice', 'oriental']
+            6. notes - string 
+        b. Ingredient Class
+            1. Name - Cinnamon
+            2. Quantity - 1
+            3. Measurement - Tablespoon, Cup, Teaspoon, pinch, bag, can
+        c. Saving as json object storage
+        d. Recipes will exist in their own files
+            1. french_toast.json
+            2. spanishrice.json
+        e. Create an search index file/class to house the name and the keywords
+            1. French Toast,Toast:French:Eggs:Breakfast,french_toast
+            2. Spanish Rice,Spanish:Mexican:Rice:Sides,spanishrice
+        
+    3. Notes
+        what do we do about duplicate recipe names, maybe add some kind of suffix
+        how should we handle the math for decimals, maybe a simple decimal converter
+        validation might break if something isnt right, maybe wrap in a try catch
+        
+Bugs:
+    FIXED 1. Fix id's so they are permanent based on location in the search index file
+    2. Create a function to rebuild the search index
+    FIXED 3. Files were saving in a non json format
+    4. If they put the wrong recipe id, just let them know and return to the menu

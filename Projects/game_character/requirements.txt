@@ -1,0 +1,94 @@
+project: Character armor
+
+user_story: 
+    As a user, i would like to be able to create a character, give him different pieces of armor and
+    be able to change the stats on that armor randomly
+
+    I would like to be able to create multiple characters, i would like the armor pieces to be:
+    (helmet, shoulders, gloves, chest, pants, boots). The armor would have 3 properties each
+    with 3 unique stats.
+
+    I want to be able to review each characters stats, i should only be able to change 1 stat on a piece 
+    of armor, or i could have the option to reroll all stats
+
+    Characters should save and i should be able to edit them at any time.
+
+requirements:
+    1. UI (User Interface)
+        a. Should be able add a new character
+        b. New character should have all armor pieces with randomly rolled stats
+        c. Should be able to see all armor pieces and their stats in a friendly format
+        d. Should be able to change 1 stat on any piece of armor, or reroll all stats for 1 piece of armor
+        e. See my list of characters
+        f. Delete a character
+
+    2. Backend
+        a. Confirm characters are being saved
+        b. Confirm characters are being loaded
+
+Layout/Design:
+    0. Draw characters as soon a program loads
+        1. Fez 
+        2. Ezekiel
+        3. Dagger
+    1. UI
+        a. Menu
+            1. Create new character
+            2. Modify Character
+                a. Enter character id to start editing - charcter should always be available in sub menus 
+                Ezekiel
+                    1. Helmet
+                        a. Fire Resist 75
+                        b. Strength 101
+                        c. Damage 250
+                    2. Shoulders
+                        xxx
+                    3. Gloves
+                        xx
+                    4. Chest
+                    5. Legs
+                    6. Boots
+                c. Edit Character Menu
+                    1. Change character name
+                    2. Reroll armor piece
+                        Enter armor id: 1
+                            Helmet
+                                a. Armor 450
+                                b. Life 200
+                                c. Fire Resistance 75
+                        a. Menu
+                            1. Reroll Stat (rerolls a single stat that user picked)
+                                Enter stat letter: (a,b,c)
+                            2. Reroll All (reroll all 3 stats)
+                            3. Go Back 
+                    3. Go Back
+            3. Delete a character
+            4. Exit character editor
+
+    2. Backend
+        a. Character Class
+            1. Name (string)
+            2. Armor (list) Armor Class
+                a. Name (string)
+                a. Stats (list) Stat Class
+                    1. Stat
+                        a. Description
+                        b. Value
+        b. Save as a json object (single file)
+        c. Add ability to delete a character  
+        d. Add ability to add a character
+        e. Create a list of different properties - Maybe a Property Generator Class
+            (strength, dexterity, intelligence, fire resist, ... )   
+            needs to prevent duplicate values
+
+
+
+
+
+name: Ezekiel
+armor: [Helmet, Shoulders, Legs, Gloves, Chest, Boots]
+    Helmet
+        stats (list)
+            stat: 
+                Description: string
+                Value: string
