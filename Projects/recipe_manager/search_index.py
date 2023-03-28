@@ -22,8 +22,17 @@ class SearchIndex:
     def __init__(this):
         this.__load()
 
+    def __ensure_exists(this):
+        try:
+            f = open(this.filename, "r")
+            f.close()
+        except:
+            f = open(this.filename, "w")
+            f.close()
+
     def __load(this):
         this.index = []
+        this.__ensure_exists()
         # Here we need to load all the data from the search.index file
         f = open(this.filename, 'r')
         lines = f.readlines()

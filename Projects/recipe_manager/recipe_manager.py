@@ -7,7 +7,7 @@ clear = lambda: os.system('cls')
 
 
 class RecipeManager:
-    main_menu_options = ["Add new recipe", "List all recipes"]
+    main_menu_options = ["Add new recipe", "List all recipes","Scan for new recipes"]
     edit_menu_options = ["Modify existing recipe", 
                          "Delete a recipe", 
                          "Start making a recipe"]
@@ -122,9 +122,6 @@ class RecipeManager:
         # Fix this up later so it can return even number, possibly fractions
         return servings * measurement
 
-
-
-
     def __handle_menu_response(this):
         choice = input("Type to search or pick an option? ")
         # Add a recipe
@@ -182,8 +179,33 @@ class RecipeManager:
                 print(f"{recipe.id}. {this.format_name(recipe.recipe_name)}")
             this.pause()
 
-        # Exit program
+        # Scan recipes folder for new recipes
         if choice == '3':
+            recipe = Recipe()
+            # Get the directory that is holding all the recipes
+            recipe_path = recipe.create_recipe_directory()
+            # Here we are clearing out the 'in memory' recipes
+            this.search_index.index = []
+            # Loop through all files in the folder (they should all be recipes)
+            for filename in os.listdir(recipe_path):
+                f = os.path.join(recipe_path, filename)
+                # checking if it is a file
+                if os.path.isfile(f):
+                    # french_toast.json -> french toast
+                    filename = filename.replace('_', " ").replace(".json", "")
+
+                    # Load each file as a recipe object
+                    new_recipe = Recipe(filename)
+                    new_recipe.load()
+
+                    # Write all of the new data to the search.index
+                    # Need to update our search index
+                    index = Index(new_recipe.name, new_recipe.categories)
+                    this.search_index.save(index)
+            this.system_message = "Recipes updated!"
+
+        # Exit program
+        if choice == '4':
             clear()
             exit("Thanks for using Recipe Manager! Ciao")
 

@@ -72,6 +72,7 @@ class Recipe:
     def create_recipe_directory(this):
         # first, check and see if the directory already exists
         current_directory = os.path.realpath(os.path.dirname(__file__))
+        # After its finished looks like "c:\coding\python\projects\recipe_manager\recipes"
         recipe_path = os.path.join(current_directory, this.recipe_directory)
         # if it does, we are done
         if os.path.exists(recipe_path):
